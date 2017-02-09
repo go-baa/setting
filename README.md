@@ -1,2 +1,2 @@
 # setting
-setting manage for baa
+setting and config file manage for baa
