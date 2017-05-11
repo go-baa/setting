@@ -12,7 +12,8 @@ setting and config file manage for baa
 app.name = baaBlog
 app.version = 0.1
 app.url = ""
-debug = false
+app.debug = false
+app.maintenance = false
 
 # http
 http.address = 0.0.0.0
