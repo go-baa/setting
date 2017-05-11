@@ -4,10 +4,16 @@ package setting
 import "gopkg.in/baa.v1"
 
 var (
-	AppName    string
+	// AppName app name
+	AppName string
+	// AppVersion app version
 	AppVersion string
-	AppURL     string
-	Debug      bool
+	// AppURL app url
+	AppURL string
+	// Debug if open debug mode
+	Debug bool
+	// Maintenance if open maintenance mode
+	Maintenance bool
 )
 
 func init() {
@@ -22,6 +28,7 @@ func init() {
 	if err == nil {
 		Debug = v
 	}
+	Maintenance = Config.MustBool("app.maintenance", false)
 	AppName = Config.MustString("app.name", "appName")
 	AppVersion = Config.MustString("app.version", "unknown")
 	AppURL = Config.MustString("app.url", "")

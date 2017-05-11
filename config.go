@@ -125,8 +125,8 @@ func init() {
 	var err error
 	Config = new(cfg)
 	file := "conf/app.ini"
-	if IsExist(file) == false {
-		dir := os.Getenv("BAA_ROOT")
+	dir := os.Getenv("BAA_ROOT")
+	if IsExist(file) == false && dir != "" {
 		file = dir + "/" + file
 	}
 	Config.config, err = goconfig.ReadConfigFile(file)
