@@ -129,6 +129,12 @@ func init() {
 	if IsExist(file) == false && dir != "" {
 		file = dir + "/" + file
 	}
+
+	confFile := os.Getenv("BAA_CONFIG_FILE")
+	if confFile != "" {
+		file = confFile
+	}
+
 	Config.config, err = goconfig.ReadConfigFile(file)
 	if err != nil {
 		log.Printf("无法加载配置文件:%s\n", err)
