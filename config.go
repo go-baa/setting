@@ -2,11 +2,10 @@
 package setting
 
 import (
-	"log"
 	"os"
 
 	"github.com/safeie/goconfig"
-	"gopkg.in/baa.v1"
+	baa "gopkg.in/baa.v1"
 )
 
 type cfg struct {
@@ -137,7 +136,7 @@ func init() {
 
 	Config.config, err = goconfig.ReadConfigFile(file)
 	if err != nil {
-		log.Printf("无法加载配置文件:%s\n", err)
+		// log.Printf("cannot load config file: %s, err: %v\n", file, err)
 		// init an empty config
 		Config.config = goconfig.NewConfigFile()
 	}
