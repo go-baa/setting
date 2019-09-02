@@ -27,6 +27,11 @@ func (c *cfg) Handle() *goconfig.ConfigFile {
 	return c.config
 }
 
+// GetPrefix ...
+func (c *cfg) GetPrefix(prefix string, keep bool) (map[string]string, error) {
+	return c.config.GetPrefix(baa.Env, prefix, keep)
+}
+
 // GetString ...
 func (c *cfg) GetString(key string) (string, error) {
 	val, err := c.config.GetString(baa.Env, key)
@@ -70,6 +75,15 @@ func (c *cfg) GetBool(key string) (bool, error) {
 		val, err = c.config.GetBool("default", key)
 	}
 	return val, err
+}
+
+// MustPrefix ...
+func (c *cfg) MustPrefix(prefix string, keep bool) map[string]string {
+	vals, err := c.config.GetPrefix(baa.Env, prefix, keep)
+	if err != nil {
+		return map[string]string{}
+	}
+	return vals
 }
 
 // MustString ...
