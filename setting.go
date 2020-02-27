@@ -1,7 +1,7 @@
 // Package setting provider runtime setting env.
 package setting
 
-import "gopkg.in/baa.v1"
+import "github.com/go-baa/baa"
 
 var (
 	// AppName app name

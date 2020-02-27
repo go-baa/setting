@@ -4,8 +4,8 @@ package setting
 import (
 	"os"
 
+	"github.com/go-baa/baa"
 	"github.com/safeie/goconfig"
-	baa "gopkg.in/baa.v1"
 )
 
 type cfg struct {
